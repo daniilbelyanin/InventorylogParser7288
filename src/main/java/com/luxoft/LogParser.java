@@ -23,7 +23,7 @@ public class LogParser {
         }
     }
 
-    public void process(String inputFolder, String outputFile) throws IOException {
+    public void process(String inputFolder, String outputFile, String service) throws IOException {
 
         ResponseProcessor responseProcessor = new ResponseProcessor();
         ArrayList<String> files = new ArrayList<String>();
@@ -38,7 +38,7 @@ public class LogParser {
             try {
                 while (it.hasNext()) {
                     String line = it.nextLine();
-                    if (line.contains("ServiceRequestCommand") && line.contains("matlock")) {
+                    if (line.contains("ServiceRequestCommand") && line.contains(service)) {
                         responseProcessor.setResponse(line);
                         responseProcessor.processResponse();
                         string2TextFile(responseProcessor.printResponse(";"), outputFile);

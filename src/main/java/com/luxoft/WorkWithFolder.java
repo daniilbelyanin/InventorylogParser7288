@@ -17,7 +17,7 @@ public class WorkWithFolder {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
             } else {
-                filesList.add(folder + "\\" + fileEntry.getName());
+                if(!fileEntry.getName().contains("jar")) filesList.add(folder + "\\" + fileEntry.getName());
             }
         }
     }

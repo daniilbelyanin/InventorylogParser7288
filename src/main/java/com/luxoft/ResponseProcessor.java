@@ -39,12 +39,13 @@ public class ResponseProcessor {
     }
 
     private void setResponseTime() {
-        pattern=Pattern.compile("\\)\\s.*ms");
+        pattern=Pattern.compile("\\)\\s.*ms\\s");
         matcher=pattern.matcher(response);
         matcher.find();
         responseAnswerTime=matcher.group(0);
         responseAnswerTime = responseAnswerTime.replaceAll("\\sms", "");
         responseAnswerTime = responseAnswerTime.replaceAll("\\)\\s", "");
+        responseAnswerTime = responseAnswerTime.replaceAll("\\s", "");
     }
 
     public void setResponse(String response) {
@@ -60,7 +61,7 @@ public class ResponseProcessor {
     }
 
     public String printResponse(String sep) {
-        return (responseAnswerDate + sep + responseTime + sep + positionsCount + sep + responseAnswerTime + sep + sessionIdKey);
+        return (responseAnswerDate + sep + responseTime + sep + positionsCount + sep + responseAnswerTime + sep + sessionIdKey+"\n");
     }
 
 }
