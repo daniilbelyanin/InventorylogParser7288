@@ -43,9 +43,11 @@ public class ResponseProcessor {
         matcher=pattern.matcher(response);
         matcher.find();
         responseAnswerTime=matcher.group(0);
-        responseAnswerTime = responseAnswerTime.replaceAll("\\sms", "");
-        responseAnswerTime = responseAnswerTime.replaceAll("\\)\\s", "");
+        responseAnswerTime = responseAnswerTime.replaceAll("ms", "");
+        responseAnswerTime = responseAnswerTime.replaceAll("\\)", "");
         responseAnswerTime = responseAnswerTime.replaceAll("\\s", "");
+        responseAnswerTime = responseAnswerTime.replaceAll("ms", "");
+        responseAnswerTime = responseAnswerTime.replaceAll(",", "");
     }
 
     public void setResponse(String response) {
