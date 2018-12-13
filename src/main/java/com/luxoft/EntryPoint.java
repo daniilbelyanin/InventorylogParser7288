@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class EntryPoint {
     public static void main(String args[]) throws IOException {
-        String inputfolder="", outputfile="default.csv", service="";
+        String inputfolder="", outputfile="default.csv", service="none";
 
         //defining cmd args
         WorkWithArguments arguments = new WorkWithArguments();
