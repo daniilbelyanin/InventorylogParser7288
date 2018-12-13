@@ -34,7 +34,7 @@ public class LogParser {
         System.out.println("Parsing started!");
         for (int i=0; i<files.size(); i++) {
             File theFile = new File(files.get(i));
-            System.out.println("Parsing logfile " + files.get(i));
+            System.out.println("Parsing logfile " + files.get(i) + "(" + (i+1) + " of " + files.size() + ")");
             LineIterator it = FileUtils.lineIterator(theFile, "UTF-8");
             try {
                 while (it.hasNext()) {
